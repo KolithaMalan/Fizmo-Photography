@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { HiArrowRight, HiLockClosed } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
 import { FaCamera, FaHeart, FaGraduationCap, FaAward } from 'react-icons/fa';
 import AlbumCard from '@/components/AlbumCard';
 import StatsCounter from '@/components/StatsCounter';
@@ -161,7 +161,8 @@ export default function Home() {
   const [phase, setPhase] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [orbitRadius, setOrbitRadius] = useState(220);
-  const [imageSize, setImageSize] = useState(84);
+  const [imageWidth, setImageWidth] = useState(84);
+  const [imageHeight, setImageHeight] = useState(100);
 
   // Use window-level scroll (no target ref to avoid hydration issues)
   const { scrollY } = useScroll();
@@ -173,23 +174,27 @@ export default function Home() {
   const smoothY = useSpring(heroParallaxY, { stiffness: 100, damping: 30 });
 
   // Text scramble
-  const scrambledText = useTextScramble('Photography', phase >= 1);
+  // Photography subtitle removed per user request
 
   useEffect(() => {
     const updateSizes = () => {
       const w = window.innerWidth;
       if (w <= 360) {
         setOrbitRadius(140);
-        setImageSize(44);
+        setImageWidth(44);
+        setImageHeight(52);
       } else if (w <= 480) {
         setOrbitRadius(160);
-        setImageSize(52);
+        setImageWidth(52);
+        setImageHeight(62);
       } else if (w <= 768) {
         setOrbitRadius(190);
-        setImageSize(62);
+        setImageWidth(62);
+        setImageHeight(74);
       } else {
-        setOrbitRadius(260);
-        setImageSize(84);
+        setOrbitRadius(320);
+        setImageWidth(100);
+        setImageHeight(118);
       }
     };
 
@@ -328,26 +333,15 @@ export default function Home() {
                 FIZMO
               </motion.h1>
 
-              {/* Text Scramble Subtitle */}
-              <motion.p
-                className={styles.heroSubtitle}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: phase >= 1 ? 1 : 0,
-                  y: phase >= 1 ? 0 : 10,
-                }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                {scrambledText}
-              </motion.p>
+
             </motion.div>
 
             {/* Orbit Ring — Pulsing Glow */}
             <motion.div
               className={`${styles.orbitRing} ${phase >= 2 ? styles.orbitRingGlow : ''}`}
               style={{
-                width: orbitRadius * 2 + imageSize,
-                height: orbitRadius * 2 + imageSize,
+                width: orbitRadius * 2 + imageWidth,
+                height: orbitRadius * 2 + imageHeight,
               }}
               initial={{ opacity: 0, scale: 0 }}
               animate={{
@@ -383,14 +377,14 @@ export default function Home() {
                     initial={{
                       opacity: 0,
                       scale: 0,
-                      x: -imageSize / 2,
-                      y: -imageSize / 2,
+                      x: -imageWidth / 2,
+                      y: -imageHeight / 2,
                     }}
                     animate={{
                       opacity: phase >= 2 ? 1 : 0,
                       scale: phase >= 2 ? 1 : 0,
-                      x: phase >= 2 ? pos.x - imageSize / 2 : -imageSize / 2,
-                      y: phase >= 2 ? pos.y - imageSize / 2 : -imageSize / 2,
+                      x: phase >= 2 ? pos.x - imageWidth / 2 : -imageWidth / 2,
+                      y: phase >= 2 ? pos.y - imageHeight / 2 : -imageHeight / 2,
                     }}
                     transition={{
                       duration: 0.7,
@@ -410,8 +404,8 @@ export default function Home() {
                       <div
                         className={styles.imageFrame}
                         style={{
-                          width: imageSize,
-                          height: imageSize,
+                          width: imageWidth,
+                          height: imageHeight,
                         }}
                       >
                         <img
@@ -576,9 +570,7 @@ export default function Home() {
                     Book via WhatsApp <HiArrowRight />
                   </Link>
                 </div>
-                <Link href="/admin" className={styles.adminLink}>
-                  <HiLockClosed /> Admin Login
-                </Link>
+
               </div>
             </motion.div>
           </div>

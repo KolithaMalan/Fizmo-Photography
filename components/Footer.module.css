@@ -150,6 +150,20 @@
     margin: 0.25rem 0;
 }
 
+.adminLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.adminLink:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 @media (max-width: 768px) {
     .content {
         grid-template-columns: 1fr 1fr;

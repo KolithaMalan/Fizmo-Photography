@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { HiLockClosed } from 'react-icons/hi';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -87,6 +88,9 @@ export default function Footer() {
                 <div className={styles.copyright}>
                     <p>© {currentYear} Fizmo Photography. All rights reserved.</p>
                     <p>Founded by Kolitha & Pubudu</p>
+                    <Link href="/admin" className={styles.adminLink}>
+                        <HiLockClosed /> Admin Login
+                    </Link>
                 </div>
             </div>
         </footer>
