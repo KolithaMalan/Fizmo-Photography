@@ -46,7 +46,7 @@ const orbitImages = [
   { src: '/Hero/H5.jpg', alt: 'Hero 5' },
   { src: '/Hero/H6.jpg', alt: 'Hero 6' },
   { src: '/Hero/H7.jpg', alt: 'Hero 7' },
-  { src: '/Hero/H8.JPEG', alt: 'Hero 8' },
+  { src: '/Hero/H8.jpg', alt: 'Hero 8' },
 ];
 
 const stats = [
