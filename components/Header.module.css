@@ -1,0 +1,149 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.headerScrolled {
+    background: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.headerScrolled .container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.headerScrolled .logoVideo {
+    height: 35px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.logo:hover {
+    color: var(--text);
+}
+
+/* New video logo styles */
+.logoVideo {
+    height: 45px;
+    width: auto;
+    pointer-events: none;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.logoText {
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.navLink:hover {
+    color: var(--text);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #ffffff, #aaaaaa);
+    transition: width var(--transition-normal);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.bookBtn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menuBtn {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 73px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        gap: 1.5rem;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(10px);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+    }
+
+    .navOpen {
+        transform: translateX(0);
+    }
+
+    .navLink {
+        font-size: 1.25rem;
+    }
+
+    .logoText {
+        display: none;
+    }
+
+    .logoVideo {
+        height: 40px;
+    }
+}

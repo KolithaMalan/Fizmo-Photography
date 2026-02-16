@@ -1,0 +1,95 @@
+.button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all var(--transition-normal);
+}
+
+.button:hover {
+    background: #128C7E;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+.button:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-110%) translateY(-50%);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.tooltip {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateX(-80%) translateY(-50%);
+    background: var(--text);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+}
+
+/* Pulse animation */
+.button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #25D366;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .button {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 55px;
+        height: 55px;
+    }
+
+    .icon {
+        font-size: 1.75rem;
+    }
+
+    .tooltip {
+        display: none;
+    }
+}

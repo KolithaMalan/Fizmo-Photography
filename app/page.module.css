@@ -1,0 +1,590 @@
+.page {
+  overflow-x: hidden;
+}
+
+/* Loading Screen */
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Particles */
+.particleField {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-120px) translateX(40px);
+    opacity: 0;
+  }
+}
+
+/* Radial Glow */
+.radialGlow {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 40%,
+      transparent 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Center Stage */
+.centerStage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* FIZMO Text */
+.fizmoWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fizmoText {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.15em;
+  margin: 0;
+  line-height: 1;
+  text-shadow:
+    0 0 40px rgba(255, 255, 255, 0.3),
+    0 0 80px rgba(255, 255, 255, 0.1);
+}
+
+/* Hero subtitle — text scramble target */
+.heroSubtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  font-weight: 300;
+  min-height: 1.5em;
+}
+
+.glitchLayer1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ff006e;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.glitchLayer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00f5ff;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* ==========================================
+   ORBIT SYSTEM
+   ========================================== */
+.orbitRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 40px rgba(255, 255, 255, 0.04),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+  transition: box-shadow 0.5s ease;
+}
+
+/* Pulsing Glow Ring */
+.orbitRingGlow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.orbitSpin {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.orbitItem {
+  pointer-events: auto;
+}
+
+.imageFrame {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.12),
+    0 8px 32px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.imageFrame:hover {
+  transform: scale(1.35) !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.4),
+    0 16px 48px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(255, 255, 255, 0.1);
+  z-index: 100;
+}
+
+.orbitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.imageShine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent);
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  25% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* ==========================================
+   STATS COUNTER SECTION
+   ========================================== */
+.statsSection {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  padding: 4rem 0;
+  position: relative;
+}
+
+.statsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.statCard {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  color: #F59E0B;
+  margin-bottom: 0.75rem;
+}
+
+.statValue {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   SECTIONS BELOW HERO
+   ========================================== */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.sectionHeader p {
+  color: #aaaaaa;
+  font-size: 1.1rem;
+}
+
+.sectionHeaderWhite {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeaderWhite h2 {
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+.sectionHeaderWhite p {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+}
+
+/* Categories */
+.categoriesSection {
+  background: #0a0a0a;
+  padding: 5rem 0;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.categoryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+/* Ken Burns animation on category images */
+.kenBurns {
+  animation: kenBurns 12s ease-in-out infinite;
+}
+
+.categoryCard:hover .categoryImage {
+  transform: scale(1.15);
+}
+
+.categoryCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.categoryCard p {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.categoryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: gap var(--transition-fast);
+}
+
+.categoryCard:hover .categoryLink {
+  gap: 0.625rem;
+}
+
+/* Albums */
+.albumsSection {
+  background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+  padding: 5rem 0;
+}
+
+.albumsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* CTA — Gradient Border */
+.ctaSection {
+  padding: 5rem 0;
+  background: #0a0a0a;
+}
+
+.ctaOuter {
+  padding: 3px;
+  border-radius: calc(var(--radius-xl) + 3px);
+  background: linear-gradient(135deg, #ff006e, #00f5ff, #F59E0B, #14B8A6, #ff006e);
+  background-size: 300% 300%;
+  animation: gradientBorder 6s ease infinite;
+}
+
+.ctaCard {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #1a1a1a;
+  border-radius: var(--radius-xl);
+  color: white;
+}
+
+.ctaCard h2 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.ctaCard p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.ctaButtons {
+  margin-bottom: 1.5rem;
+}
+
+.ctaCard .btn {
+  background: white;
+  color: #1a1a1a;
+}
+
+.ctaCard .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.adminLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  transition: color var(--transition-fast);
+}
+
+.adminLink:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .fizmoText {
+    font-size: 2.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+
+  .imageFrame {
+    border-radius: 8px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .categoryCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .categoryIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .albumsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCard {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .radialGlow {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fizmoText {
+    font-size: 2.2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .heroSubtitle {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+
+  .imageFrame {
+    border-radius: 6px;
+  }
+
+  .radialGlow {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  .fizmoText {
+    font-size: 1.8rem;
+  }
+}
