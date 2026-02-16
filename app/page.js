@@ -39,14 +39,14 @@ const categories = [
 ];
 
 const orbitImages = [
-  { src: '/wedd.JPEG', alt: 'Wedding' },
-  { src: '/F1.png', alt: 'Photo 1' },
-  { src: '/graduation.JPEG', alt: 'Graduation' },
-  { src: '/F2.png', alt: 'Photo 2' },
-  { src: '/event.JPEG', alt: 'Event' },
-  { src: '/F3.png', alt: 'Photo 3' },
-  { src: '/birthday.JPG', alt: 'Birthday' },
-  { src: '/F4.png', alt: 'Photo 4' },
+  { src: '/Hero/H1.jpg', alt: 'Hero 1' },
+  { src: '/Hero/H2.jpg', alt: 'Hero 2' },
+  { src: '/Hero/H3.jpg', alt: 'Hero 3' },
+  { src: '/Hero/H4.jpg', alt: 'Hero 4' },
+  { src: '/Hero/H5.jpg', alt: 'Hero 5' },
+  { src: '/Hero/H6.jpg', alt: 'Hero 6' },
+  { src: '/Hero/H7.jpg', alt: 'Hero 7' },
+  { src: '/Hero/H8.JPEG', alt: 'Hero 8' },
 ];
 
 const stats = [
