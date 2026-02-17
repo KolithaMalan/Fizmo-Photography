@@ -1,6 +1,42 @@
 {
   "albums": [
     {
+  "id": "dave-naduni-proposal-2025",
+  "title": "Dave & Naduni Proposal 💍",
+  "category": "events",
+  "date": "2025-10-05",
+  "description": "Proposal event photography for Dave & Naduni",
+  "coverPhotoId": "1SyzACOFV3X-aiqxKRkWhO5J1S6mymvGo",
+  "folderLink": "",
+  "photos": [
+    { "id": "1SyzACOFV3X-aiqxKRkWhO5J1S6mymvGo", "caption": "Event highlight" },
+    { "id": "16W8BDo987L08Um7lAlEkcMezDvAfVjAF", "caption": "" },
+    { "id": "1PEG96wCALtBiJFH1Yf4rU6rqym5CrYiJ", "caption": "" },
+    { "id": "1-Uw5RguEDyZFhQ-o5kuESPyrcZ0NPzeR", "caption": "" },
+    { "id": "1bYTtr7ia3CEP1trYHNsxk1Kx4G9rEguP", "caption": "" },
+    { "id": "1zihEjVajDzbkdXWgTmLl4qBX3u9l8BxF", "caption": "" },
+    { "id": "1ctfFZuCqc7sfhEOL_GOZd98rcbbxXruH", "caption": "" },
+    { "id": "1TWZAnyWGChH9ZXMZx2irvsMIalC904s-", "caption": "" },
+    { "id": "1xazKPvPopUausmQsq8RHNjML9U2zo2PJ", "caption": "" },
+    { "id": "1EzxaNrUBdBesfv0sAd6NjxPvtrWNMjKl", "caption": "" },
+    { "id": "1S5P9gWxPUb2IUanMvePh2MyCeeX6ET31", "caption": "" },
+    { "id": "1qXfUf1-XDfgJBPyifwRVNnY8gLBWrGBw", "caption": "" },
+    { "id": "12E_myOWN8Pa2hAPEF6grYVyBIlQ1HQHK", "caption": "" },
+    { "id": "1iXYppWg9wt6D08BD0qUq08FxUYk0mPjY", "caption": "" },
+    { "id": "1e7vvZnFiSS5iXuyFKXiISpCd2A9OnBwC", "caption": "" },
+    { "id": "10M_oHe3mEys8RZkVsUTaxvjW5cgOeXf1", "caption": "" },
+    { "id": "1qq3AHJhy1CtpZwbRlOfqz0nu5yh5mrf2", "caption": "" },
+    { "id": "11Jl5ePxF9ytzakPMsgykpmWJniDzdu0m", "caption": "" },
+    { "id": "1PEnq8Lcc-DRn7TdlKg2TG0IwHSHJB4Kf", "caption": "" },
+    { "id": "1BN9oxl60Dr0u5TweJgU8mpjK6M_O0OzS", "caption": "" },
+    { "id": "1ptZ3guZLvH9_nV1-pdG2H3iLRcb96Yv3", "caption": "" },
+    { "id": "1Fzr1VyNpeep9y2vheBMJ0vzfnubSmg0M", "caption": "" },
+    { "id": "15MbFGiAIbF1209jFSHTZ_NIDT5W4eCnI", "caption": "" },
+    { "id": "1H8uwb9ViFOjKJwa1SsNcrLTlLA8STH0H", "caption": "" },
+    { "id": "1VpbOeoLw-zMgCOns3f8xsKgDLfffBhv6", "caption": "" }
+  ]
+},
+    {
       "id": "nethmi-graduation-2025",
       "title": "Nethmi",
       "category": "graduations",
