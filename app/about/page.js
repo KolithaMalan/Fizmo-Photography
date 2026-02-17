@@ -24,7 +24,7 @@ const stats = [
     { icon: <FaCamera />, value: '3+', label: 'Years Experience' },
     { icon: <FaHeart />, value: '1000+', label: 'Happy Clients' },
     { icon: <FaGraduationCap />, value: '100+', label: 'Shoots' },
-    { icon: <FaAward />, value: '20000+', label: 'Photos Delivered' },
+    { icon: <FaAward />, value: '15000+', label: 'Photos Delivered' },
 ];
 
 export default function AboutPage() {
