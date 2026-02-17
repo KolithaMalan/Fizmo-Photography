@@ -51,9 +51,9 @@ const orbitImages = [
 
 const stats = [
   { icon: <FaCamera />, value: '3+', label: 'Years Experience' },
-  { icon: <FaHeart />, value: '500+', label: 'Happy Clients' },
-  { icon: <FaGraduationCap />, value: '100+', label: 'Graduations' },
-  { icon: <FaAward />, value: '1000+', label: 'Photos Delivered' },
+  { icon: <FaHeart />, value: '1000+', label: 'Happy Clients' },
+  { icon: <FaGraduationCap />, value: '100+', label: 'Shoots' },
+  { icon: <FaAward />, value: '20000+', label: 'Photos Delivered' },
 ];
 
 // Stagger animation variants
